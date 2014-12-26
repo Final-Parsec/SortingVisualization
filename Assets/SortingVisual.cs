@@ -36,30 +36,30 @@ public class SortingVisual : MonoBehaviour {
 
 		// Make arrays of randome numbers to be sorted
 		for(int x=0; x<100; x++){
+
 			bubbleArray[x] = UnityEngine.Random.Range(1,11);
-			insertionArray[x] = UnityEngine.Random.Range(1,11);
-			selectionArray[x] = UnityEngine.Random.Range(1,11);
-			quickArray[x] = UnityEngine.Random.Range(1,11);
-
-		}
-
-		// Make bars
-		for(int x=0; x<100; x++){
 			GameObject cube = Instantiate(bar, new Vector3(leftScreenEdge.x + 40 +(1.5f*x), bubbleSortText.transform.position.y - 2, bubbleSortText.transform.position.z), Quaternion.Euler(Vector3.zero)) as GameObject;
 			cube.transform.localScale = new Vector3(cube.transform.localScale.x, bubbleArray[x], cube.transform.localScale.z);
 			bubbleBars[x] = cube;
 
+
+			insertionArray[x] = UnityEngine.Random.Range(1,11);
 			cube = Instantiate(bar, new Vector3(leftScreenEdge.x + 40 +(1.5f*x), insertionSortText.transform.position.y - 2, insertionSortText.transform.position.z), Quaternion.Euler(Vector3.zero)) as GameObject;
 			cube.transform.localScale = new Vector3(cube.transform.localScale.x, insertionArray[x], cube.transform.localScale.z);
 			insertionBars[x] = cube;
 
+
+			selectionArray[x] = UnityEngine.Random.Range(1,11);
 			cube = Instantiate(bar, new Vector3(leftScreenEdge.x + 40 +(1.5f*x), selectionSortText.transform.position.y - 2, selectionSortText.transform.position.z), Quaternion.Euler(Vector3.zero)) as GameObject;
 			cube.transform.localScale = new Vector3(cube.transform.localScale.x, selectionArray[x], cube.transform.localScale.z);
 			selectionBars[x] = cube;
 
+
+			quickArray[x] = UnityEngine.Random.Range(1,11);
 			cube = Instantiate(bar, new Vector3(leftScreenEdge.x + 40 +(1.5f*x), quickSortText.transform.position.y - 2, quickSortText.transform.position.z), Quaternion.Euler(Vector3.zero)) as GameObject;
 			cube.transform.localScale = new Vector3(cube.transform.localScale.x, quickArray[x], cube.transform.localScale.z);
 			quickBars[x] = cube;
+
 		}
 
 		// Start sorting
